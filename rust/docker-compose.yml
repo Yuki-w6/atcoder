@@ -1,0 +1,13 @@
+services:
+  workspace:
+    build:
+      context: ./dockerfiles/workspace
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/mnt
+      - vscext:/home/developer/.vscode-server/extensions
+    networks:
+      - default
+
+volumes:
+  vscext:
